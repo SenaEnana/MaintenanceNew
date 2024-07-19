@@ -20,14 +20,14 @@
         <div class="alert alert-success text-center">{{ session("message") }}</div>
         @endif
     </div>
-    <form wire:submit.prevent="storeEmployeeData" class="form-group rounded border col-6 ms-5 ms-4 bg-light container" id="employeeForm">
+    <form wire:submit.prevent="storeCustomerData" class="form-group rounded border col-6 ms-5 ms-4 bg-light container" id="customerForm">
         <div class="col-8 row">
             <div>
-                <label class="text-dark float-start p-0 fs-5 center m-1" for="employee_id">Employee Id</label>
+                <label class="text-dark float-start p-0 fs-5 center m-1" for="customer_id">Customer Id</label>
             </div>
             <div class="form-group">
-                <input placeholder="Enter employee id" type="text" class="form-control text-dark fw-lighter fs-6 m-0" id="employee_id" wire:model="employee_id">
-                @error("employee_id") 
+                <input placeholder="Enter employee id" type="text" class="form-control text-dark fw-lighter fs-6 m-0" id="customer_id" wire:model="customer_id">
+                @error("customer_id") 
                 <span class="text-danger fs-4">{{ $message }}</span> 
                 @enderror
             </div>
@@ -98,16 +98,15 @@
    function handleSubmit(event) {
         event.preventDefault();
         console.log('Form data:', {
-            employee_id: document.getElementById('employee_id').value,
+            customer_id: document.getElementById('customer_id').value,
             first_name: document.getElementById('first_name').value,
             last_name: document.getElementById('last_name').value,
             email: document.getElementById('email').value,
             phone: document.getElementById('phone').value,
             location: document.getElementById('location').value,
-            equipment: document.getElementById('equipment').value,
         });
 
-        const form = document.getElementById('employeeForm');
+        const form = document.getElementById('customerForm');
         if (form) {
             form.submit();
         } else {
