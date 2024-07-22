@@ -13,20 +13,20 @@
 <body>
 <div wire:ignore.self>
     <div class="ms-3">
-        <p class="fs-4 text-dark text-center fw-bold">Create new Employee</p>
+        <p class="fs-4 text-dark text-center fw-bold">Create new Customer</p>
     </div>
     <div class="card-body">
         @if(session()->has("message"))
         <div class="alert alert-success text-center">{{ session("message") }}</div>
         @endif
     </div>
-    <form wire:submit.prevent="storeCustomerData" class="form-group rounded border col-6 ms-5 ms-4 bg-light container" id="customerForm">
+    <form wire:submit.prevent="submit" class="form-group rounded border col-6 ms-5 ms-4 bg-light container" id="customerForm">
         <div class="col-8 row">
             <div>
                 <label class="text-dark float-start p-0 fs-5 center m-1" for="customer_id">Customer Id</label>
             </div>
             <div class="form-group">
-                <input placeholder="Enter employee id" type="text" class="form-control text-dark fw-lighter fs-6 m-0" id="customer_id" wire:model="customer_id">
+                <input placeholder="Enter customer id" type="text" class="form-control text-dark fw-lighter fs-6 m-0" id="customer_id" wire:model="customer_id">
                 @error("customer_id") 
                 <span class="text-danger fs-4">{{ $message }}</span> 
                 @enderror
@@ -73,15 +73,6 @@
             <div class="form-group">
                 <input placeholder="Enter location" type="text" class="form-control text-dark fw-lighter fs-6 m-0 m-2 p-1" id="location" wire:model="location">
                 @error("location") 
-                <span class="text-danger fs-4">{{ $message }}</span> 
-                @enderror  
-            </div>
-            <div>
-                <label class="text-dark float-start p-0 fs-5 m-1" for="equipment">Equipment</label>
-            </div>
-            <div class="form-group">
-                <input placeholder="Enter equipment" type="text" class="form-control text-dark fw-lighter fs-6 m-0 m-2 p-1" id="equipment" wire:model="equipment">
-                @error("equipment") 
                 <span class="text-danger fs-4">{{ $message }}</span> 
                 @enderror  
             </div>

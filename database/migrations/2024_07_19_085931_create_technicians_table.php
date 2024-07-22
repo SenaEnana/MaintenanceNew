@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('last_name');
             $table->string('email')->unique();
             $table->string('phone');
-            $table->string('job_type');
-            $table->string('service_location');
+            $table->foreignId('job_type_id')->constrained();
+            $table->foreignId('service_location_id')->constrained();
             $table->timestamps();
         });
         

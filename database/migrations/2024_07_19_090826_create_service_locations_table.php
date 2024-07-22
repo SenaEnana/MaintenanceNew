@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('service_locations', function (Blueprint $table) {
             $table->id();
+            $table->string('service_locations_id');
             $table->string('name');
-            $table->foreignId('employee_id')->constrained();
+            $table->foreignId('technician_id')->constrained();
             $table->timestamps();
         });
         

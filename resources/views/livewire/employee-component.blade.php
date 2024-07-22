@@ -20,7 +20,7 @@
         <div class="alert alert-success text-center">{{ session("message") }}</div>
         @endif
     </div>
-    <form wire:submit.prevent="storeEmployeeData" class="form-group rounded border col-6 ms-5 ms-4 bg-light container" id="employeeForm">
+    <form wire:submit.prevent="storeEmployeeData" class="form-group rounded border col-6 ms-5 ms-4 bg-light container">
         <div class="col-8 row">
             <div>
                 <label class="text-dark float-start p-0 fs-5 center m-1" for="employee_id">Employee Id</label>
@@ -86,7 +86,7 @@
                 @enderror  
             </div>
             <div>
-                <button type="submit" class="btn btn-success col-12" onclick="handleSubmit(event)">Submit</button>
+                <button type="submit" class="btn btn-success col-12">Submit</button>
             </div>
         </div>
     </form>
@@ -94,26 +94,5 @@
 
 @livewireScripts
 
-<script>
-   function handleSubmit(event) {
-        event.preventDefault();
-        console.log('Form data:', {
-            employee_id: document.getElementById('employee_id').value,
-            first_name: document.getElementById('first_name').value,
-            last_name: document.getElementById('last_name').value,
-            email: document.getElementById('email').value,
-            phone: document.getElementById('phone').value,
-            location: document.getElementById('location').value,
-            equipment: document.getElementById('equipment').value,
-        });
-
-        const form = document.getElementById('employeeForm');
-        if (form) {
-            form.submit();
-        } else {
-            console.error('Form not found!');
-        }
-    }
-</script>
 </body>
 </html>

@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class RequestType extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'request_types_id',
+        'name',
+        'description',
+    ]; 
+
 }
