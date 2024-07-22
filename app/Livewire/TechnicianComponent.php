@@ -18,24 +18,24 @@ class TechnicianComponent extends Component
    
     public function updated($fields){
             $this->validateOnly($fields,[
-            'technician_id' => 'required|unique:customers',
+            'technician_id' => 'required|unique:technicians',
             'first_name' => 'required',
             'last_name' => 'required',
             'email' => 'required|email',
             'phone' => 'required|numeric',
-            'job_type_id' => 'required|numeric',
+            'job_type_id' => 'required',
             'service_location_id' => 'required',
             ]);
     }
     public function submit()
     {
         $this->validate([
-            'technician_id' => 'required|unique:employees',
+            'technician_id' => 'required|unique:technicians',
             'first_name' => 'required',
             'last_name' => 'required',
             'email' => 'required|email',
             'phone' => 'required|numeric',
-            'job_type_id' => 'required|numeric',
+            'job_type_id' => 'required',
             'service_location_id' => 'required',
         ]);
 
@@ -52,8 +52,8 @@ class TechnicianComponent extends Component
         session()->flash('message', 'New employee has been added successfully');
         $this->reset();
     }
-    public function __invoke()
+    public function render()
     {
-        return view('livewire.technician-component')->layout('livewire.layouts.base');
+        return view('livewire.technician-component')->layout('layouts.app');
     }
 }

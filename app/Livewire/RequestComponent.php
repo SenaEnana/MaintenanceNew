@@ -16,21 +16,21 @@ class RequestComponent extends Component
    
     public function updated($fields){
                 $this->validateOnly($fields,[
-                'customer_id' => 'required|unique:customers',
+                'customer_id' => 'required|unique:maintenance-requests',
                 'technician_id' => 'required',
                 'equipment_id' => 'required',
-                'request_type_id' => 'required|request_type_id',
-                'description' => 'required|numeric',
+                'request_type_id' => 'required',
+                'description' => 'required',
                 ]);
     }
     public function submit()
     {
         $this->validate([
-            'customer_id' => 'required|unique:employees',
+            'customer_id' => 'required|unique:maintenance-requests',
             'technician_id' => 'required',
             'equipment_id' => 'required',
-            'request_type_id' => 'required|request_type_id',
-            'description' => 'required|numeric'
+            'request_type_id' => 'required',
+            'description' => 'required'
         ]);
 
         MaintenanceRequest::create([
@@ -39,15 +39,14 @@ class RequestComponent extends Component
             'equipment_id' => $this->equipment_id,
             'request_type_id' => $this->request_type_id,
             'description' => $this->description,
-            'location' => $this->location,
         ]);
 
         session()->flash('message', 'New employee has been added successfully');
         $this->reset();
     }
 
-    public function __invoke()
+    public function render()
     {
-        return view('livewire.request-component');
+        return view('livewire.request-component')->layout('layouts.app');
     }
 }

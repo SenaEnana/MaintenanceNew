@@ -50,8 +50,8 @@ $this->validateOnly($fields,[
             Log::error('Error saving employee: ' . $e->getMessage());
         }
     }
-    public function __invoke()
+    public function render()
     {
-        return view('livewire.employee-component')->layout('livewire.layouts.base');
+        return view('livewire.employee-component')->layout('layouts.app');
     }
 }

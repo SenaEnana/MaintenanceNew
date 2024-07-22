@@ -28,7 +28,7 @@ class CustomerComponent extends Component
     public function submit()
     {
         $this->validate([
-            'customer_id' => 'required|unique:employees',
+            'customer_id' => 'required|unique:customers',
             'first_name' => 'required',
             'last_name' => 'required',
             'email' => 'required|email',
@@ -49,8 +49,8 @@ class CustomerComponent extends Component
         $this->reset();
     }
 
-    public function __invoke()
+    public function render()
     {
-        return view('livewire.customer-component')->layout('livewire.layouts.base');
+        return view('livewire.customer-component');
     }
 }

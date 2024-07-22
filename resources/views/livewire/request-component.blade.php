@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CreateTechnician</title>
+    <title>Send maintenance request</title>
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +12,7 @@
 <body><div wire:ignore.self>
          <div class="ms-3">
               <p class="fs-4 text-dark text-center fw-bold">
-              Create new technician
+             Submit Maintenance Request
               </p>
             </div>
 <form wire:submit.prevent="submit" 
