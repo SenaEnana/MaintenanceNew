@@ -46,7 +46,7 @@ class="form-control text-dark fw-lighter fs-6 m-0" id="request_types_id" wire:mo
     <!-- this will be the the textfield -->
     </div>
     <div class="form-group">
-        <input type="number" placeholder="Enter description" 
+        <input type="text" placeholder="Enter description" 
         class="form-control text-dark fw-lighter fs-6 m-0 m-2 p-1" 
         id="description" wire:model='description'>
         @error('description') 

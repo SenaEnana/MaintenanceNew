@@ -21,6 +21,9 @@ return new class extends Migration
             $table->foreignId('job_type_id')->constrained();
             $table->foreignId('location_id')->constrained();
             $table->timestamps();
+
+            $table->foreign('job_type_id')->references('id')->on('job_types');
+            $table->foreign('location_id')->references('id')->on('locations');
         });
         
         

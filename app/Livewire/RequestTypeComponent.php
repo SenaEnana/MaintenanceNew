@@ -13,7 +13,7 @@ class RequestTypeComponent extends Component
    
     public function updated($fields){
                 $this->validateOnly($fields,[
-                'request_types_id' => 'required|unique:request-types',
+                'request_types_id' => 'required|unique:request_types',
                 'name' => 'required',
                 'description' => 'required',
                 ]);
@@ -21,7 +21,7 @@ class RequestTypeComponent extends Component
     public function submit()
     {
         $this->validate([
-            'request_types_id' => 'required|unique:request-types',
+            'request_types_id' => 'required|unique:request_types',
             'name' => 'required',
             'description' => 'required'
         ]);
