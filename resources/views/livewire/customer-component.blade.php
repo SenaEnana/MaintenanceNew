@@ -77,7 +77,7 @@
                 @enderror  
             </div>
             <div>
-                <button type="submit" class="btn btn-success col-12" onclick="handleSubmit(event)">Submit</button>
+                <button type="submit" class="btn btn-success col-12">submit</button>
             </div>
         </div>
     </form>
