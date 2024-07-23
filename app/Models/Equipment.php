@@ -11,13 +11,7 @@ class Equipment extends Model
 
     protected $fillable = [
         'equipment_id',
-        'customer_id',
         'name',
     ];  
-
-    public function employee()
-    {
-        return $this->hasMany(Customer::class);
-    }
 
 }

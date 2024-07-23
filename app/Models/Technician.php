@@ -16,7 +16,7 @@ class Technician extends Model
         'email',
         'phone',
         'job_type_id',
-        'service_location_id',
+        'locations_id',
     ]; 
 
     public function requests()

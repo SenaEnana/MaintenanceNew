@@ -30,23 +30,11 @@ class="form-control text-dark fw-lighter fs-6 m-0" id="equipment_id" wire:model=
 @enderror
 </div>
 <div>
-    <label class="text-dark float-start p-0 fs-5 m-1" 
-    for="customer_id">Customer Id</label>
-    </div>
-    <div class="form-group">
-        <input type="number" placeholder="Enter customer id" 
-        class="form-control text-dark fw-lighter fs-6 m-0 m-2 p-1" 
-        id="customer_id" wire:model='customer_id'>
-        @error('customer_id') 
-    <span class="text-danger fs-4">{{ $message }}</span> 
-    @enderror  
-</div>
-    <div>
     <label class="text-dark float-start p-0 fs-5 center m-1" 
-    for="name">Request type name</label>
+    for="name">Equipment name</label>
     </div>
   <div class="form-group">
-    <input type="text" placeholder="Enter request type name" 
+    <input type="text" placeholder="Enter equipment name" 
     class="form-control text-dark fw-lighter fs-6 m-0" id="name" wire:model='name'>
 @error('name') 
 <span class="text-danger fs-4">{{ $message }}</span> 

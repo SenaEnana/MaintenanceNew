@@ -14,7 +14,7 @@ class TechnicianComponent extends Component
     public $email = '';
     public $phone = '';
     public $job_type_id = '';
-    public $service_location_id = '';
+    public $locations_id = '';
    
     public function updated($fields){
             $this->validateOnly($fields,[
@@ -23,8 +23,8 @@ class TechnicianComponent extends Component
             'last_name' => 'required',
             'email' => 'required|email',
             'phone' => 'required|numeric',
-            'job_type_id' => 'required',
-            'service_location_id' => 'required',
+            'job_type_id' => 'required|unique:job_types',
+            'locations_id' => 'required|unique:locations',
             ]);
     }
     public function submit()
@@ -35,8 +35,8 @@ class TechnicianComponent extends Component
             'last_name' => 'required',
             'email' => 'required|email',
             'phone' => 'required|numeric',
-            'job_type_id' => 'required',
-            'service_location_id' => 'required',
+            'job_type_id' => 'required|unique:job_types',
+            'locations_id' => 'required|unique:locations',
         ]);
 
         Technician::create([
@@ -46,7 +46,7 @@ class TechnicianComponent extends Component
             'email' => $this->email,
             'phone' => $this->phone,
             'job_type_id' => $this->job_type_id,
-            'service_location_id' => $this->service_location_id,
+            'locations_id' => $this->locations_id,
         ]);
 
         session()->flash('message', 'New employee has been added successfully');

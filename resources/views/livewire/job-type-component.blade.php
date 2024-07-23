@@ -31,7 +31,7 @@ class="form-control text-dark fw-lighter fs-6 m-0" id="job_types_id" wire:model=
 </div>
     <div>
     <label class="text-dark float-start p-0 fs-5 center m-1" 
-    for="name">Request type name</label>
+    for="name">Job type name</label>
     </div>
   <div class="form-group">
     <input type="text" placeholder="Enter request type name" 
@@ -46,7 +46,7 @@ class="form-control text-dark fw-lighter fs-6 m-0" id="job_types_id" wire:model=
     <!-- this will be the the textfield -->
     </div>
     <div class="form-group">
-        <input type="number" placeholder="Enter description" 
+        <input type="text" placeholder="Enter description" 
         class="form-control text-dark fw-lighter fs-6 m-0 m-2 p-1" 
         id="description" wire:model='description'>
         @error('description') 

@@ -72,11 +72,11 @@
 @enderror  
 </div>
   <div>
-  <label class="text-dark float-start p-0 fs-5 m-1" for="service_location_id">Service Location</label>
+  <label class="text-dark float-start p-0 fs-5 m-1" for="location_id">Service Location</label>
   </div>
   <div class="form-group">
-    <input type="text" placeholder="Enter service location" class="form-control text-dark fw-lighter fs-6 m-0 m-2 p-1" id="service_location_id" wire:model='service_location_id'>
-    @error('service_location_id') 
+    <input type="text" placeholder="Enter service location" class="form-control text-dark fw-lighter fs-6 m-0 m-2 p-1" id="location_id" wire:model='location_id'>
+    @error('location_id') 
 <span class="text-danger fs-4">{{ $message }}</span> 
 @enderror  
 </div>

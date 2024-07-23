@@ -20,21 +20,21 @@ class="form-group rounded border col-6 ms-5 ms-4 bg-light container ">
             <div class="col-8 row">
             <div>
   <label class="text-dark float-start p-0 fs-5 m-1" 
-  for="service_locations_id">Service location Id</label>
+  for="locations_id">Service location Id</label>
   </div>
 <div class="form-group">
-<input type="text" placeholder="Enter equipment id" 
-class="form-control text-dark fw-lighter fs-6 m-0" id="service_locations_id" wire:model='service_locations_id'>
-@error('service_locations_id') 
+<input type="text" placeholder="Enter location id" 
+class="form-control text-dark fw-lighter fs-6 m-0" id="locations_id" wire:model='locations_id'>
+@error('locations_id') 
 <span class="text-danger fs-4">{{ $message }}</span> 
 @enderror
 </div>
 <div>
     <label class="text-dark float-start p-0 fs-5 center m-1" 
-    for="name">Request type name</label>
+    for="name">Service location name</label>
     </div>
   <div class="form-group">
-    <input type="text" placeholder="Enter request type name" 
+    <input type="text" placeholder="Enter service location name" 
     class="form-control text-dark fw-lighter fs-6 m-0" id="name" wire:model='name'>
 @error('name') 
 <span class="text-danger fs-4">{{ $message }}</span> 
@@ -42,13 +42,13 @@ class="form-control text-dark fw-lighter fs-6 m-0" id="service_locations_id" wir
 </div>
 <div>
     <label class="text-dark float-start p-0 fs-5 m-1" 
-    for="technician_id">Technician id</label>
+    for="street">Address</label>
     </div>
     <div class="form-group">
-        <input type="text" placeholder="Enter technician id" 
+        <input type="text" placeholder="Enter street or address" 
         class="form-control text-dark fw-lighter fs-6 m-0 m-2 p-1" 
-        id="technician_id" wire:model='technician_id'>
-        @error('technician_id') 
+        id="street" wire:model='street'>
+        @error('street') 
     <span class="text-danger fs-4">{{ $message }}</span> 
     @enderror  
 </div>

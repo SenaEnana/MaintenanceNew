@@ -14,7 +14,7 @@ class JobTypeComponent extends Component
    
     public function updated($fields){
                 $this->validateOnly($fields,[
-                'job_types_id' => 'required|unique:job-types',
+                'job_types_id' => 'required|unique:job_types',
                 'name' => 'required',
                 'description' => 'required',
                 ]);
@@ -22,7 +22,7 @@ class JobTypeComponent extends Component
     public function submit()
     {
         $this->validate([
-            'job_types_id' => 'required|unique:job-types',
+            'job_types_id' => 'required|unique:job_types',
             'name' => 'required',
             'description' => 'required'
         ]);
