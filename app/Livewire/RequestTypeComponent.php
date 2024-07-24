@@ -7,13 +7,13 @@ use App\Models\RequestType;
 
 class RequestTypeComponent extends Component
 {
-    public $request_types_id = '';
+    public $request_type_id = '';
     public $name = '';
     public $description = '';
    
     public function updated($fields){
                 $this->validateOnly($fields,[
-                'request_types_id' => 'required|unique:request_types',
+                'request_type_id' => 'required|unique:request_types',
                 'name' => 'required',
                 'description' => 'required',
                 ]);
@@ -21,13 +21,13 @@ class RequestTypeComponent extends Component
     public function submit()
     {
         $this->validate([
-            'request_types_id' => 'required|unique:request_types',
+            'request_type_id' => 'required|unique:request_types',
             'name' => 'required',
             'description' => 'required'
         ]);
 
         RequestType::create([
-            'request_types_id' => $this->request_types_id,
+            'request_type_id' => $this->request_type_id,
             'name' => $this->name,
             'description' => $this->description,
         ]);

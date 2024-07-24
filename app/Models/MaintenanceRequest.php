@@ -10,21 +10,33 @@ class MaintenanceRequest extends Model
     use HasFactory;
 
     protected $fillable = [
-        'customer_id',
-        'technician_id',
         'equipment_id',
         'request_type_id',
         'description',
         'status',
-    ];  
+    ];
 
-    public function employee()
+    const STATUS_PENDING = 'Pending';
+    const STATUS_COMPLETED = 'Completed';
+
+    public function markAsPending()
     {
-        return $this->belongsTo(Customer::class);
+        $this->update(['status' => self::STATUS_PENDING]);
     }
 
-    public function technician()
+    public function markAsCompleted()
     {
-        return $this->belongsTo(Technician::class);
+        $this->update(['status' => self::STATUS_COMPLETED]);
+    }
+
+    // Relationships
+    public function equipment()
+    {
+        return $this->belongsTo(Equipment::class);
+    }
+
+    public function requestType()
+    {
+        return $this->belongsTo(RequestType::class);
     }
 }

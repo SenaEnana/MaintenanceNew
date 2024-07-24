@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('maintenance_requests', function (Blueprint $table) {
+        Schema::table('maintenance_requests', function (Blueprint $table) {
             if (!Schema::hasColumn('maintenance_requests', 'id')) {
                 $table->id();
             }
@@ -32,7 +32,7 @@ return new class extends Migration
                 $table->text('description');
             }
             if (!Schema::hasColumn('maintenance_requests', 'status')) {
-                $table->enum('status', ['Pending', 'In Progress', 'Completed']);
+                $table->enum('status', ['Pending', 'Completed']);
             }
             if (!Schema::hasColumn('maintenance_requests', 'created_at') || !Schema::hasColumn('maintenance_requests', 'updated_at')) {
                 $table->timestamps();

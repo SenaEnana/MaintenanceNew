@@ -20,12 +20,12 @@ class="form-group rounded border col-6 ms-5 ms-4 bg-light container ">
             <div class="col-8 row">
             <div>
   <label class="text-dark float-start p-0 fs-5 m-1" 
-  for="request_types_id">Request type Id</label>
+  for="request_type_id">Request type Id</label>
   </div>
 <div class="form-group">
 <input type="text" placeholder="Enter request type id" 
-class="form-control text-dark fw-lighter fs-6 m-0" id="request_types_id" wire:model='request_types_id'>
-@error('request_types_id') 
+class="form-control text-dark fw-lighter fs-6 m-0" id="request_type_id" wire:model='request_type_id'>
+@error('request_type_id') 
 <span class="text-danger fs-4">{{ $message }}</span> 
 @enderror
 </div>

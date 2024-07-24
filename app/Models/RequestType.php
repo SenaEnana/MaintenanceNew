@@ -12,10 +12,10 @@ class RequestType extends Model
     protected $table = 'request_types'; // Ensure this is correct
 
     // If your primary key column is named differently
-    protected $primaryKey = 'request_types_id'; 
+    protected $primaryKey = 'request_type_id'; 
 
     protected $fillable = [
-        'request_types_id',
+        'request_type_id',
         'name',
         'description',
     ]; 
