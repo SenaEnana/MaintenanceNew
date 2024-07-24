@@ -40,19 +40,18 @@ class="form-control text-dark fw-lighter fs-6 m-0" id="request_type_id" wire:mod
 <span class="text-danger fs-4">{{ $message }}</span> 
 @enderror
 </div>
-    <div>
-    <label class="text-dark float-start p-0 fs-5 m-1" 
-    for="description">Description</label>
-    <!-- this will be the the textfield -->
-    </div>
-    <div class="form-group">
-        <input type="text" placeholder="Enter description" 
-        class="form-control text-dark fw-lighter fs-6 m-0 m-2 p-1" 
-        id="description" wire:model='description'>
-        @error('description') 
-    <span class="text-danger fs-4">{{ $message }}</span> 
-    @enderror  
-</div>
+<div>
+                <label class="text-dark float-start p-0 fs-5 m-1" 
+                for="description">Description</label>
+            </div>
+            <div class="form-group">
+                <textarea placeholder="Enter description" 
+                class="form-control text-dark fw-lighter fs-6 m-0 m-2 p-1" id="description" wire:model='description'>
+              </textarea>
+                @error('description') 
+                <span class="text-danger fs-4">{{ $message }}</span> 
+                @enderror  
+            </div>
   <div>
   <button type="submit" class="btn btn-success col-12">Submit</button>
   </div>
