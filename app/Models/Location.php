@@ -10,7 +10,7 @@ class Location extends Model
     use HasFactory;
 
     protected $fillable = [
-        'locations_id',
+        'location_id',
         'name',
         'street',
     ]; 

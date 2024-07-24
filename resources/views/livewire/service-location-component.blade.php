@@ -20,12 +20,12 @@ class="form-group rounded border col-6 ms-5 ms-4 bg-light container ">
             <div class="col-8 row">
             <div>
   <label class="text-dark float-start p-0 fs-5 m-1" 
-  for="locations_id">Service location Id</label>
+  for="location_id">Service location Id</label>
   </div>
 <div class="form-group">
 <input type="text" placeholder="Enter location id" 
-class="form-control text-dark fw-lighter fs-6 m-0" id="locations_id" wire:model='locations_id'>
-@error('locations_id') 
+class="form-control text-dark fw-lighter fs-6 m-0" id="location_id" wire:model='location_id'>
+@error('location_id') 
 <span class="text-danger fs-4">{{ $message }}</span> 
 @enderror
 </div>

@@ -8,13 +8,13 @@ use App\Models\JobType;
 class JobTypeComponent extends Component
 {
 
-    public $job_types_id = '';
+    public $job_type_id = '';
     public $name = '';
     public $description = '';
    
     public function updated($fields){
                 $this->validateOnly($fields,[
-                'job_types_id' => 'required|unique:job_types',
+                'job_type_id' => 'required|unique:job_types',
                 'name' => 'required',
                 'description' => 'required',
                 ]);
@@ -22,13 +22,13 @@ class JobTypeComponent extends Component
     public function submit()
     {
         $this->validate([
-            'job_types_id' => 'required|unique:job_types',
+            'job_type_id' => 'required|unique:job_types',
             'name' => 'required',
             'description' => 'required'
         ]);
 
         JobType::create([
-            'job_types_id' => $this->job_types_id,
+            'job_type_id' => $this->job_type_id,
             'name' => $this->name,
             'description' => $this->description,
         ]);

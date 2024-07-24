@@ -10,7 +10,7 @@ class JobType extends Model
     use HasFactory;
 
     protected $fillable = [
-        'job_types_id',
+        'job_type_id',
         'name',
         'description',
     ];  

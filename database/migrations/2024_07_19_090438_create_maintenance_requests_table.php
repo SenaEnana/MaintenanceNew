@@ -12,20 +12,46 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('maintenance_requests', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('customer_id')->constrained();
-            $table->foreignId('technician_id')->constrained();
-            $table->foreignId('equipment_id')->constrained();
-            $table->unsignedBigInteger('request_type_id');
-            $table->text('description');
-            $table->enum('status', ['Pending', 'In Progress', 'Completed']);
-            $table->timestamps();
-            $table->foreign('request_type_id')->references('id')->on('request_types')->onDelete('cascade');
-
+            if (!Schema::hasColumn('maintenance_requests', 'id')) {
+                $table->id();
+            }
+            if (!Schema::hasColumn('maintenance_requests', 'customer_id')) {
+                $table->foreignId('customer_id')->constrained();
+            }
+            if (!Schema::hasColumn('maintenance_requests', 'technician_id')) {
+                $table->foreignId('technician_id')->constrained();
+            }
+            if (!Schema::hasColumn('maintenance_requests', 'equipment_id')) {
+                $table->foreignId('equipment_id')->constrained();
+            }
+            if (!Schema::hasColumn('maintenance_requests', 'request_type_id')) {
+                $table->unsignedBigInteger('request_type_id');
+                $table->foreign('request_type_id')->references('id')->on('request_types')->onDelete('cascade');
+            }
+            if (!Schema::hasColumn('maintenance_requests', 'description')) {
+                $table->text('description');
+            }
+            if (!Schema::hasColumn('maintenance_requests', 'status')) {
+                $table->enum('status', ['Pending', 'In Progress', 'Completed']);
+            }
+            if (!Schema::hasColumn('maintenance_requests', 'created_at') || !Schema::hasColumn('maintenance_requests', 'updated_at')) {
+                $table->timestamps();
+            }
         });
     }
+
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
+        Schema::table('maintenance_requests', function (Blueprint $table) {
+            $table->dropForeign(['customer_id']);
+            $table->dropForeign(['technician_id']);
+            $table->dropForeign(['equipment_id']);
+            $table->dropForeign(['request_type_id']);
+        });
+
         Schema::dropIfExists('maintenance_requests');
     }
 };

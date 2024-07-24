@@ -20,12 +20,12 @@ class="form-group rounded border col-6 ms-5 ms-4 bg-light container ">
             <div class="col-8 row">
             <div>
   <label class="text-dark float-start p-0 fs-5 m-1" 
-  for="job_types_id">Job type Id</label>
+  for="job_type_id">Job type Id</label>
   </div>
 <div class="form-group">
 <input type="text" placeholder="Enter job type id" 
-class="form-control text-dark fw-lighter fs-6 m-0" id="job_types_id" wire:model='job_types_id'>
-@error('job_types_id') 
+class="form-control text-dark fw-lighter fs-6 m-0" id="job_type_id" wire:model='job_type_id'>
+@error('job_type_id') 
 <span class="text-danger fs-4">{{ $message }}</span> 
 @enderror
 </div>

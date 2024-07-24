@@ -62,30 +62,30 @@
                 @enderror
             </div>
             <div>
-                <label class="text-dark float-start p-0 fs-5 m-1" for="job_types_id">Job Type</label>
+                <label class="text-dark float-start p-0 fs-5 m-1" for="job_type_id">Job Type</label>
             </div>
             <div class="form-group">
-                <select class="form-control text-dark fw-lighter fs-6 m-0 m-2 p-1" id="job_types_id" wire:model='job_types_id'>
+                <select class="form-control text-dark fw-lighter fs-6 m-0 m-2 p-1" id="job_type_id" wire:model='job_type_id'>
                     <option value="">Select Job Type</option>
                     @foreach($jobTypes as $jobType)
                         <option value="{{ $jobType->id }}">{{ $jobType->name }}</option>
                     @endforeach
                 </select>
-                @error('job_types_id')
+                @error('job_type_id')
                 <span class="text-danger fs-4">{{ $message }}</span>
                 @enderror
             </div>
             <div>
-                <label class="text-dark float-start p-0 fs-5 m-1" for="locations_id">Service Location</label>
+                <label class="text-dark float-start p-0 fs-5 m-1" for="location_id">Service Location</label>
             </div>
             <div class="form-group">
-                <select class="form-control text-dark fw-lighter fs-6 m-0 m-2 p-1" id="locations_id" wire:model='locations_id'>
+                <select class="form-control text-dark fw-lighter fs-6 m-0 m-2 p-1" id="location_id" wire:model='location_id'>
                     <option value="">Select Service Location</option>
                     @foreach($locations as $location)
                         <option value="{{ $location->id }}">{{ $location->name }}</option>
                     @endforeach
                 </select>
-                @error('locations_id')
+                @error('location_id')
                 <span class="text-danger fs-4">{{ $message }}</span>
                 @enderror
             </div>

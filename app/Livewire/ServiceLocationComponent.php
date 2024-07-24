@@ -8,13 +8,13 @@ use App\Models\Location;
 class ServiceLocationComponent extends Component
 {
 
-    public $locations_id = '';
+    public $location_id = '';
     public $name = '';
     public $street = '';
 
     public function updated($fields){
                 $this->validateOnly($fields,[
-                'locations_id' => 'required|unique:locations',
+                'location_id' => 'required|unique:locations',
                 'name' => 'required',
                 'street' => 'required',
                 ]);
@@ -22,13 +22,13 @@ class ServiceLocationComponent extends Component
     public function submit()
     {
         $this->validate([
-            'locations_id' => 'required|unique:locations',
+            'location_id' => 'required|unique:locations',
             'name' => 'required',
             'street' => 'required',
         ]);
 
         Location::create([
-            'locations_id' => $this->locations_id,
+            'location_id' => $this->location_id,
             'name' => $this->name,
             'street' => $this->street,
         ]);
