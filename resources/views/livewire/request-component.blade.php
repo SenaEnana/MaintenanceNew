@@ -18,6 +18,22 @@
     </div>
     <form wire:submit.prevent="submit" class="form-group rounded border col-6 ms-5 ms-4 bg-light container">
         <div class="col-8 row">
+
+            <div>
+                <label class="text-dark float-start p-0 fs-5 m-1" for="customer_id">Customer</label>
+            </div>
+            <div class="form-group">
+                <select class="form-control text-dark fw-lighter fs-6 m-0 m-2 p-1" id="customer_id" wire:model='customer_id'>
+                    <option value="">Select Customer</option>
+                    @foreach($customers as $customer)
+                        <option value="{{ $customer->id }}">{{ $customer->name }}</option>
+                    @endforeach
+                </select>
+                @error('customer_id') 
+                <span class="text-danger fs-4">{{ $message }}</span> 
+                @enderror
+            </div>
+
             <div>
                 <label class="text-dark float-start p-0 fs-5 m-1" for="equipment_id">Equipment</label>
             </div>

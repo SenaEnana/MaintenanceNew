@@ -51,6 +51,7 @@ class CustomerComponent extends Component
 
     public function render()
     {
-        return view('livewire.customer-component');
+        $customers = Customer::all();
+        return view('livewire.customer-component', ['customers' => $customers]);
     }
 }

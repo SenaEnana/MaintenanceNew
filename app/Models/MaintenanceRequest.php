@@ -10,6 +10,7 @@ class MaintenanceRequest extends Model
     use HasFactory;
 
     protected $fillable = [
+        'customer_id',
         'equipment_id',
         'request_type_id',
         'description',
@@ -30,6 +31,11 @@ class MaintenanceRequest extends Model
     }
 
     // Relationships
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class);
+    }
+
     public function equipment()
     {
         return $this->belongsTo(Equipment::class);
