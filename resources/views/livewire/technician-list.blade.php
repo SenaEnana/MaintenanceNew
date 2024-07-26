@@ -2,6 +2,11 @@
 
 @section('content')
 <div class="container m-5">
+<div>
+    <x-responsive-nav-link :href="route('technician-component')" :active="request()->routeIs('technician-component')" class="btn-sm float-end fw-bold" wire:navigate>
+                {{ __('Add New Technician') }}
+            </x-responsive-nav-link>
+    </div>
     <div>
         <p class="m-2 fs-4 fw-bold" style="text-align: center;">Technician List</p>
     </div>

@@ -3,6 +3,11 @@
 @section('content')
 <div class="container m-5">
     <div>
+    <x-responsive-nav-link :href="route('customer-component')" :active="request()->routeIs('customer-component')" class="btn-sm float-end fw-bold" wire:navigate>
+                {{ __('Add Customer') }}
+            </x-responsive-nav-link>
+    </div>
+    <div>
         <p class="m-2 fs-4 fw-bold" style="text-align: center;">Customer List</p>
     </div>
     <table class="table table-hover text-dark w-100 fs-6">

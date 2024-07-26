@@ -34,6 +34,15 @@ new class extends Component
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('customer-list')" :active="request()->routeIs('customer-list')" wire:navigate>
+                        {{ __('Customer List') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('technician-list')" :active="request()->routeIs('technician-list')" wire:navigate>
+                        {{ __('Technician List') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('request-list')" :active="request()->routeIs('request-list')" wire:navigate>
+                        {{ __('Request List') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -89,6 +98,15 @@ new class extends Component
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
                 {{ __('Dashboard') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('customer-list')" :active="request()->routeIs('customer-list')" wire:navigate>
+                {{ __('Customer List') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('technician-list')" :active="request()->routeIs('technician-list')" wire:navigate>
+                {{ __('Technician List') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('request-list')" :active="request()->routeIs('request-list')" wire:navigate>
+                {{ __('Request List') }}
             </x-responsive-nav-link>
         </div>
 
