@@ -43,7 +43,7 @@ class TechnicianComponent extends Component
             'email' => $this->email,
             'phone' => $this->phone,
             'job_type_id' => $this->job_type_id,
-            'location_id' => $this->location_id, // Use singular 'location_id'
+            'location_id' => $this->location_id,
         ]);
 
         session()->flash('message', 'New technician has been added successfully');
@@ -54,6 +54,8 @@ class TechnicianComponent extends Component
     {
         $jobTypes = JobType::all();
         $locations = Location::all();
-        return view('livewire.technician-component', compact('jobTypes', 'locations'))->layout('layouts.app');
+        $technicians = Technician::with(['location', 'jobType'])->get();
+        return view('livewire.technician-component', compact('jobTypes', 'locations', 'technicians'))->layout('layouts.app');
     }
+    
 }

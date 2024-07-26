@@ -1,3 +1,7 @@
+@extends('layouts.app')
+
+@section('content')
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,4 +64,4 @@ class="form-control text-dark fw-lighter fs-6 m-0" id="job_type_id" wire:model='
 </div>
 </body>
 </html>
-
+@endsection

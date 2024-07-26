@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -16,7 +19,10 @@
     <body class="antialiased font-sans">
     <div>
         @livewire('customer-component')
+
     </div>
 
     </body>
 </html>
+
+@endsection

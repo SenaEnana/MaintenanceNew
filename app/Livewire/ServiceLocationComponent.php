@@ -33,7 +33,7 @@ class ServiceLocationComponent extends Component
             'street' => $this->street,
         ]);
 
-        session()->flash('message', 'New employee has been added successfully');
+        session()->flash('message', 'New location has been added successfully');
         $this->reset();
     }
 

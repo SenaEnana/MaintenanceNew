@@ -3,7 +3,7 @@
 @section('content')
 <div class="container m-5">
     <div>
-        <p class="m-2 fs-1 fw-bold" style="text-align: center;">Customer List</p>
+        <p class="m-2 fs-4 fw-bold" style="text-align: center;">Technician List</p>
     </div>
     <table class="table table-hover text-dark w-100 fs-6">
         <thead>
@@ -14,6 +14,7 @@
                 <th>Email</th>
                 <th>Phone Number</th>
                 <th>Location</th>
+                <th>Job Type</th>
                 <th style="text-align: center;">Action</th>
             </tr>
         </thead>
@@ -26,7 +27,8 @@
                         <td>{{$technician->last_name}}</td>
                         <td>{{$technician->email}}</td>
                         <td>{{$technician->phone}}</td>
-                        <td>{{$technician->location}}</td>
+                        <td>{{$technician->location->name}}</td> 
+                        <td>{{$technician->jobType->name}}</td> 
                         <td style="text-align: center;">
                             <button class="btn btn-sm btn-info">View</button>
                             <button class="btn btn-sm btn-secondary">Edit</button>
@@ -36,12 +38,13 @@
                 @endforeach
             @else
                 <tr>
-                    <td class="p-2" colspan="7" style="text-align:center"><small>No customer found in the database</small></td>
+                    <td class="p-2" colspan="7" style="text-align:center"><small>No technician found in the database</small></td>
                 </tr>
             @endif
         </tbody>
     </table>
 </div>
-@endsection
 
 @livewireScripts
+
+@endsection

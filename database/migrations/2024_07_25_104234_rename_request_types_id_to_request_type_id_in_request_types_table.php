@@ -12,9 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('request_types', function (Blueprint $table) {
-            if (Schema::hasColumn('request_types', 'request_types_id')) {
                 $table->renameColumn('request_types_id', 'request_type_id');
-            }
         });
     }
 
@@ -24,9 +22,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('request_types', function (Blueprint $table) {
-            if (Schema::hasColumn('request_types', 'request_types_id')) {
-                $table->renameColumn('request_types_id', 'request_type_id');
-            }
+            $table->renameColumn('request_types_id', 'request_type_id');
         });
     }
 };

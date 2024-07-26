@@ -23,4 +23,12 @@ class Technician extends Model
     {
         return $this->hasMany(MaintenanceRequest::class);
     }
+    public function location()
+    {
+        return $this->belongsTo(Location::class);
+    }
+    public function jobType()
+    {
+        return $this->belongsTo(JobType::class);
+    }
 }

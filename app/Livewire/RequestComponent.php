@@ -58,10 +58,15 @@ class RequestComponent extends Component
 
     public function render()
     {
+        $equipments = Equipment::all();
+        $requestTypes = RequestType::all();
+        $requests = MaintenanceRequest::with(['equipment', 'requestType', 'customer'])->get();
         return view('livewire.request-component', [
             'equipments' => $this->equipments,
             'requestTypes' => $this->requestTypes,
             'customers' => $this->customers,
+            'requests' => $requests,
         ])->layout('layouts.app');
     }
+    
 }

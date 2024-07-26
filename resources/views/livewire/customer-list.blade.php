@@ -3,7 +3,7 @@
 @section('content')
 <div class="container m-5">
     <div>
-        <p class="m-2 fs-1 fw-bold" style="text-align: center;">Customer List</p>
+        <p class="m-2 fs-4 fw-bold" style="text-align: center;">Customer List</p>
     </div>
     <table class="table table-hover text-dark w-100 fs-6">
         <thead>
@@ -42,6 +42,7 @@
         </tbody>
     </table>
 </div>
-@endsection
 
 @livewireScripts
+
+@endsection

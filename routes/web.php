@@ -21,5 +21,6 @@ Route::get('/jobTypes', App\Livewire\JobTypeComponent::class);
 Route::get('/equipments', App\Livewire\EquipmentComponent::class);
 Route::get('/customerList', App\Livewire\CustomerList::class);
 Route::get('/technicianList', App\Livewire\TechnicianList::class);
+Route::get('/requestList', App\Livewire\RequestList::class);
 
 require __DIR__.'/auth.php';

@@ -11,15 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('maintenance_requests', function (Blueprint $table) {
+        Schema::create('maintenance_requests', function (Blueprint $table) {
             if (!Schema::hasColumn('maintenance_requests', 'id')) {
                 $table->id();
             }
             if (!Schema::hasColumn('maintenance_requests', 'customer_id')) {
                 $table->foreignId('customer_id')->constrained();
-            }
-            if (!Schema::hasColumn('maintenance_requests', 'technician_id')) {
-                $table->foreignId('technician_id')->constrained();
             }
             if (!Schema::hasColumn('maintenance_requests', 'equipment_id')) {
                 $table->foreignId('equipment_id')->constrained();
@@ -47,7 +44,6 @@ return new class extends Migration
     {
         Schema::table('maintenance_requests', function (Blueprint $table) {
             $table->dropForeign(['customer_id']);
-            $table->dropForeign(['technician_id']);
             $table->dropForeign(['equipment_id']);
             $table->dropForeign(['request_type_id']);
         });

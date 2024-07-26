@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('maintenance_requests', function (Blueprint $table) {
-            // Add the customer_id field and set up the foreign key constraint
-            $table->foreignId('customer_id')->constrained('customers')->after('id');
+            $table->unsignedBigInteger('customer_id')->after('id');
+            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
         });
     }
 
@@ -23,9 +23,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('maintenance_requests', function (Blueprint $table) {
-            // Drop the foreign key constraint and the customer_id field
-            $table->dropForeign(['customer_id']);
-            $table->dropColumn('customer_id');
+          $table->dropForeign(['customer_id']);
+          $table->dropColumn('customer_id');
         });
     }
 };

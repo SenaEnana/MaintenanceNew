@@ -1,3 +1,7 @@
+@extends('layouts.app')
+
+@section('content')
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +16,7 @@
 </head>
 <body>
 <div wire:ignore.self>
+@yield('content')
     <div class="ms-3">
         <p class="fs-4 text-dark text-center fw-bold">Create new Customer</p>
     </div>
@@ -107,3 +112,4 @@
 </script>
 </body>
 </html>
+@endsection

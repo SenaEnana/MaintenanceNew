@@ -9,9 +9,7 @@ class RequestType extends Model
 {
     use HasFactory;
 
-    protected $table = 'request_types'; // Ensure this is correct
-
-    // If your primary key column is named differently
+    protected $table = 'request_types';
     protected $primaryKey = 'request_type_id'; 
 
     protected $fillable = [
@@ -19,5 +17,10 @@ class RequestType extends Model
         'name',
         'description',
     ]; 
+
+    public function maintenanceRequests()
+    {
+        return $this->hasMany(MaintenanceRequest::class);
+    }
 
 }

@@ -1,3 +1,7 @@
+@extends('layouts.app')
+
+@section('content')
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +30,7 @@
                 <select class="form-control text-dark fw-lighter fs-6 m-0 m-2 p-1" id="customer_id" wire:model='customer_id'>
                     <option value="">Select Customer</option>
                     @foreach($customers as $customer)
-                        <option value="{{ $customer->id }}">{{ $customer->name }}</option>
+                        <option value="{{ $customer->id }}">{{ $customer->first_name }}</option>
                     @endforeach
                 </select>
                 @error('customer_id') 
@@ -82,3 +86,4 @@
 </div>
 </body>
 </html>
+@endsection
